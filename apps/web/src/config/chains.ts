@@ -52,7 +52,7 @@ export const openextest = defineChain({
     },
   },
   testnet: true,
-}) satisfies Chain
+})
 
 /**
  * Controls some L2 specific behavior, e.g. slippage tolerance, special UI behavior.
