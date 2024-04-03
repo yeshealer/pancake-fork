@@ -31,6 +31,7 @@ export const FACTORY_ADDRESS_MAP = {
   [ChainId.SEPOLIA]: '0x1bdc540dEB9Ed1fA29964DeEcCc524A8f5e2198e',
   [ChainId.ARBITRUM_SEPOLIA]: '0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E',
   [ChainId.BASE_SEPOLIA]: '0x02a84c1b3BBD7401a5f7fa98a384EBC70bB5749E',
+  [ChainId.OPEN_EX_LONG_TEST]: '0x0E4342F38B4A41F904056Cd9513Edb60d3Af9E6a',
 } as const satisfies Record<ChainId, Address>
 
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
@@ -57,6 +58,7 @@ export const INIT_CODE_HASH_MAP = {
   [ChainId.SEPOLIA]: INIT_CODE_HASH_ETH,
   [ChainId.ARBITRUM_SEPOLIA]: INIT_CODE_HASH_ETH,
   [ChainId.BASE_SEPOLIA]: INIT_CODE_HASH_ETH,
+  [ChainId.OPEN_EX_LONG_TEST]: INIT_CODE_HASH_ETH,
 } as const satisfies Record<ChainId, Hash>
 
 export const WETH9 = {
@@ -220,6 +222,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io'
   ),
+  [ChainId.OPEN_EX_LONG_TEST]: new ERC20Token(
+    ChainId.OPEN_EX_LONG_TEST,
+    '0x8Ce4B67b08c147572c463c894Ff5b540FB58C42a',
+    18,
+    'WUSDT',
+    'Wrapped USDT',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -286,6 +296,7 @@ export const WNATIVE = {
   [ChainId.SEPOLIA]: WETH9[ChainId.SEPOLIA],
   [ChainId.ARBITRUM_SEPOLIA]: WETH9[ChainId.ARBITRUM_SEPOLIA],
   [ChainId.BASE_SEPOLIA]: WETH9[ChainId.BASE_SEPOLIA],
+  [ChainId.OPEN_EX_LONG_TEST]: WETH9[ChainId.OPEN_EX_LONG_TEST],
 } satisfies Record<ChainId, ERC20Token>
 
 const ETHER = { name: 'Ether', symbol: 'ETH', decimals: 18 } as const
@@ -338,6 +349,11 @@ export const NATIVE = {
   [ChainId.BASE_SEPOLIA]: {
     name: 'Sepolia Ether',
     symbol: 'ETH',
+    decimals: 18,
+  },
+  [ChainId.OPEN_EX_LONG_TEST]: {
+    name: 'USDT Testnet',
+    symbol: 'USDT',
     decimals: 18,
   },
 } satisfies Record<

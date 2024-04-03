@@ -236,6 +236,14 @@ export const CAKE = {
     'PancakeSwap Token',
     'https://pancakeswap.finance/',
   ),
+  [ChainId.OPEN_EX_LONG_TEST]: new ERC20Token(
+    ChainId.OPEN_EX_LONG_TEST,
+    '0x2659b3f9Cb67094881F181B619D1A6b57B0ae00F',
+    18,
+    'Cake',
+    'Pancakeswap Token',
+    'https://pancakeswap.finance',
+  ),
 }
 
 export const USDC = {
@@ -323,6 +331,13 @@ export const USDC = {
     'USDC',
     'USD Coin',
   ),
+  [ChainId.OPEN_EX_LONG_TEST]: new ERC20Token(
+    ChainId.OPEN_EX_LONG_TEST,
+    '0xa1dcC8811a4eAB0398E6446097b5cBE7742599F6',
+    18,
+    'USDC',
+    'USD Coin',
+  ),
 }
 
 export const USDT = {
@@ -371,6 +386,13 @@ export const USDT = {
     'Tether USD',
   ),
   [ChainId.LINEA]: new ERC20Token(ChainId.LINEA, '0xA219439258ca9da29E9Cc4cE5596924745e12B93', 6, 'USDT', 'Tether USD'),
+  [ChainId.OPEN_EX_LONG_TEST]: new ERC20Token(
+    ChainId.OPEN_EX_LONG_TEST,
+    '0x0000000000000000000000000000000000000000',
+    18,
+    'USDT',
+    'Tether USD',
+  ),
 }
 
 export const WBTC_ETH = new ERC20Token(
@@ -402,4 +424,5 @@ export const STABLE_COIN = {
   [ChainId.SEPOLIA]: USDC[ChainId.SEPOLIA],
   [ChainId.ARBITRUM_SEPOLIA]: USDC[ChainId.ARBITRUM_SEPOLIA],
   [ChainId.BASE_SEPOLIA]: USDC[ChainId.BASE_SEPOLIA],
+  [ChainId.OPEN_EX_LONG_TEST]: USDT[ChainId.OPEN_EX_LONG_TEST],
 } satisfies Record<ChainId, ERC20Token>

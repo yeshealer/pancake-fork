@@ -14,6 +14,7 @@ import { lineaTokens } from './constants/linea'
 import { lineaTestnetTokens } from './constants/lineaTestnet'
 import { opBnbTokens } from './constants/opBNB'
 import { opBnbTestnetTokens } from './constants/opBnbTestnet'
+import { openExLongTestnetTokens } from './constants/openExLongTestnet'
 import { polygonZkEvmTokens } from './constants/polygonZkEVM'
 import { polygonZkEvmTestnetTokens } from './constants/polygonZkEVMTestnet'
 import { scrollSepoliaTokens } from './constants/scrollSepolia'
@@ -42,4 +43,5 @@ export const allTokens = {
   [ChainId.SEPOLIA]: sepoliaTokens,
   [ChainId.ARBITRUM_SEPOLIA]: arbSepoliaTokens,
   [ChainId.BASE_SEPOLIA]: baseSepoliaTokens,
+  [ChainId.OPEN_EX_LONG_TEST]: openExLongTestnetTokens,
 }

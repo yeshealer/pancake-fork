@@ -32,6 +32,8 @@ const PERMIT2_ADDRESSES: Record<ChainId, Address> = {
 
   [ChainId.OPBNB]: '0x31c2F6fcFf4F8759b3Bd5Bf0e1084A055615c768',
   [ChainId.OPBNB_TESTNET]: '0x31c2F6fcFf4F8759b3Bd5Bf0e1084A055615c768',
+
+  [ChainId.OPEN_EX_LONG_TEST]: '0x0000000000000000000000000000000000000000',
 }
 
 export const getPermit2Address = (chainId: ChainId | undefined): Address => {

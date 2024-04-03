@@ -48,9 +48,8 @@ const AvatarInactive = styled(NoProfileAvatarIcon)`
 
 const ProfileAvatarWithTeam: React.FC<React.PropsWithChildren<ProfileAvatarProps>> = ({ profile }) => {
   return (
-    <AvatarWrapper $bg={profile.nft?.image.thumbnail}>
-      {!profile.isActive && <AvatarInactive />}
-      {profile.team && <TeamAvatar src={`/images/teams/${profile.team.images.alt}`} alt={profile.team.name} />}
+    <AvatarWrapper>
+      <AvatarInactive />
     </AvatarWrapper>
   )
 }

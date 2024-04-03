@@ -12,14 +12,11 @@ export const ChainLogo = memo(
         <Image
           alt={`chain-${chainId}`}
           style={{ maxHeight: `${height}px`, borderRadius: '50%' }}
-          src={`${ASSET_CDN}/web/chains/${chainId}.png`}
-          onError={({ currentTarget }) => {
-            currentTarget.onerror = null
-            currentTarget.src =
-              chainId === ChainId.OPEN_EX_LONG_TEST
-                ? 'https://ipfs.io/ipfs/bafkreidnu6p6vmmplerzvkboq7fz73ygkomzpnnokuxstrqv2fvxgmgg7i'
-                : '/images/no_icon.png'
-          }}
+          src={
+            chainId === ChainId.OPEN_EX_LONG_TEST
+              ? 'https://ipfs.io/ipfs/bafkreidnu6p6vmmplerzvkboq7fz73ygkomzpnnokuxstrqv2fvxgmgg7i'
+              : `${ASSET_CDN}/web/chains/${chainId}.png`
+          }
           width={width}
           height={height}
           unoptimized

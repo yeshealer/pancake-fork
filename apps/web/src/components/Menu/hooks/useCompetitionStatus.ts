@@ -1,7 +1,7 @@
-import { useMemo } from 'react'
 import { useQuery } from '@tanstack/react-query'
-import { SmartContractPhases, LIVE, REGISTRATION } from 'config/constants/trading-competition/phases'
+import { LIVE, REGISTRATION, SmartContractPhases } from 'config/constants/trading-competition/phases'
 import { useTradingCompetitionContractMoD } from 'hooks/useContract'
+import { useMemo } from 'react'
 
 export const useCompetitionStatus = () => {
   const tradingCompetitionContract = useTradingCompetitionContractMoD()
