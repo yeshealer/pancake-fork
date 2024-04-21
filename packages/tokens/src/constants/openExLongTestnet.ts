@@ -6,5 +6,5 @@ export const openExLongTestnetTokens = {
   cake: CAKE[ChainId.OPEN_EX_LONG_TEST],
   weth: WETH9[ChainId.OPEN_EX_LONG_TEST],
   usdc: USDC[ChainId.OPEN_EX_LONG_TEST],
-  usdt: USDT[ChainId.OPEN_EX_LONG_TEST],
+  oex: USDT[ChainId.OPEN_EX_LONG_TEST],
 }

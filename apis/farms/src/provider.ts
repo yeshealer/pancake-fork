@@ -1,4 +1,5 @@
 import { ChainId } from '@pancakeswap/chains'
+import { openextest } from '@pancakeswap/sdk'
 import { Chain, createPublicClient, http, PublicClient } from 'viem'
 import {
   arbitrum,
@@ -265,6 +266,25 @@ const opBNBTestnetClient = createPublicClient({
   },
 })
 
+const openExTestnetClient = createPublicClient({
+  chain: {
+    ...openextest,
+    contracts: {
+      multicall3: {
+        address: '0x604097847EFC6aE6775411A1ad32a0CCF4f5eAe7',
+        blockCreated: 802922,
+      },
+    },
+  },
+  transport: http(OPBNB_NODE),
+  batch: {
+    multicall: {
+      batchSize: 1024 * 200,
+      wait: 16,
+    },
+  },
+})
+
 export const viemProviders = ({ chainId }: { chainId?: ChainId }): PublicClient => {
   switch (chainId) {
     case ChainId.ETHEREUM:
@@ -291,6 +311,8 @@ export const viemProviders = ({ chainId }: { chainId?: ChainId }): PublicClient 
       return opBNBClient
     case ChainId.OPBNB_TESTNET:
       return opBNBTestnetClient
+    case ChainId.OPEN_EX_LONG_TEST:
+      return openExTestnetClient
     default:
       return bscClient
   }

@@ -18,6 +18,7 @@ import {
   lineaTokens,
   opBnbTestnetTokens,
   opBnbTokens,
+  openExLongTestnetTokens,
   polygonZkEvmTestnetTokens,
   polygonZkEvmTokens,
   scrollSepoliaTokens,
@@ -49,7 +50,7 @@ export const SMART_ROUTER_ADDRESSES = {
   [ChainId.SEPOLIA]: '0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86',
   [ChainId.ARBITRUM_SEPOLIA]: '0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86',
   [ChainId.BASE_SEPOLIA]: '0x678Aa4bF4E210cf2166753e054d5b7c31cc7fa86',
-  [ChainId.OPEN_EX_LONG_TEST]: '0xca8DFC5F73D8F9ADd3b81a10d041c06A8183253B',
+  [ChainId.OPEN_EX_LONG_TEST]: '0x225bcD6b70BbC071ec1b120dC39B520C340dAB9A',
 } as const satisfies Record<ChainId, string>
 
 export const V2_ROUTER_ADDRESS: ChainMap<string> = {
@@ -73,7 +74,7 @@ export const V2_ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.SEPOLIA]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
   [ChainId.ARBITRUM_SEPOLIA]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
   [ChainId.BASE_SEPOLIA]: '0x8cFe327CEc66d1C090Dd72bd0FF11d690C33a2Eb',
-  [ChainId.OPEN_EX_LONG_TEST]: '0xca8DFC5F73D8F9ADd3b81a10d041c06A8183253B',
+  [ChainId.OPEN_EX_LONG_TEST]: '0xD6c8C4E0606FCbAdDc9a7Ed46aaB85c72c51A1BE',
 }
 
 export const STABLE_SWAP_INFO_ADDRESS: ChainMap<string> = {
@@ -130,7 +131,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.SEPOLIA]: [sepoliaTokens.usdc, sepoliaTokens.weth],
   [ChainId.ARBITRUM_SEPOLIA]: [arbSepoliaTokens.usdc, arbSepoliaTokens.weth],
   [ChainId.BASE_SEPOLIA]: [baseSepoliaTokens.usdc, baseSepoliaTokens.weth],
-  [ChainId.OPEN_EX_LONG_TEST]: [],
+  [ChainId.OPEN_EX_LONG_TEST]: [openExLongTestnetTokens.weth, openExLongTestnetTokens.usdc],
 }
 
 const czusd = new ERC20Token(ChainId.BSC, '0xE68b79e51bf826534Ff37AA9CeE71a3842ee9c70', 18, 'CZUSD', 'CZUSD')

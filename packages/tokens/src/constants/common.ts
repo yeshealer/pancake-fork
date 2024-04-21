@@ -238,7 +238,7 @@ export const CAKE = {
   ),
   [ChainId.OPEN_EX_LONG_TEST]: new ERC20Token(
     ChainId.OPEN_EX_LONG_TEST,
-    '0x2659b3f9Cb67094881F181B619D1A6b57B0ae00F',
+    '0xb5352f827F8421d4206eAd3fE0707AC8bb1E9BcF',
     18,
     'Cake',
     'Pancakeswap Token',
@@ -388,7 +388,7 @@ export const USDT = {
   [ChainId.LINEA]: new ERC20Token(ChainId.LINEA, '0xA219439258ca9da29E9Cc4cE5596924745e12B93', 6, 'USDT', 'Tether USD'),
   [ChainId.OPEN_EX_LONG_TEST]: new ERC20Token(
     ChainId.OPEN_EX_LONG_TEST,
-    '0x0000000000000000000000000000000000000000',
+    '0x6cBFE2BBFcbf90e7b2D0223541c122A13cBAb6a1',
     18,
     'USDT',
     'Tether USD',

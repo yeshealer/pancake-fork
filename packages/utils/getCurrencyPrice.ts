@@ -64,6 +64,8 @@ export async function getCurrencyUsdPrice(currencyParams?: CurrencyParams) {
 
   const prices = await getCurrencyListUsdPrice([currencyParams])
   const key = getCurrencyKey(currencyParams)
+
+  console.log(key, prices)
   return (key && prices[key]) ?? 0
 }
 

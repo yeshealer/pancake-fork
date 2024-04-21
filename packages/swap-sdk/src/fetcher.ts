@@ -1,20 +1,43 @@
-import { createPublicClient, PublicClient, http, getContract, Address } from 'viem'
-import { bsc, bscTestnet, mainnet, goerli } from 'viem/chains'
-import { CurrencyAmount, Token } from '@pancakeswap/swap-sdk-core'
 import { ChainId } from '@pancakeswap/chains'
+import { CurrencyAmount, Token } from '@pancakeswap/swap-sdk-core'
 import invariant from 'tiny-invariant'
-import { Pair } from './entities/pair'
+import { Address, PublicClient, createPublicClient, defineChain, getContract, http } from 'viem'
+import { bsc, bscTestnet, goerli, mainnet } from 'viem/chains'
 import { erc20ABI } from './abis/ERC20'
 import { pancakePairV2ABI } from './abis/IPancakePair'
+import { Pair } from './entities/pair'
 
 let TOKEN_DECIMALS_CACHE: { [chainId: number]: { [address: string]: number } } = {
   [ChainId.BSC]: {},
 }
 
+export const openextest = defineChain({
+  id: 7_798,
+  network: 'OpenEX LONG Testnet',
+  name: 'OpenEX LONG Testnet',
+  nativeCurrency: { name: 'USDT Testnet', symbol: 'USDT', decimals: 18 },
+  rpcUrls: {
+    default: { http: ['https://long.rpc.openex.network/'] },
+    public: { http: ['https://long.rpc.openex.network/'] },
+  },
+  blockExplorers: {
+    default: {
+      name: 'OpenEX Long Testnet Explorer',
+      url: 'https://scan.long.openex.network',
+    },
+    etherscan: {
+      name: 'OpenEX Long Testnet Explorer',
+      url: 'https://scan.long.openex.network',
+    },
+  },
+  testnet: true,
+})
+
 const ethClient = createPublicClient({ chain: mainnet, transport: http() })
 const bscClient = createPublicClient({ chain: bsc, transport: http() })
 const bscTestnetClient = createPublicClient({ chain: bscTestnet, transport: http() })
 const goerliClient = createPublicClient({ chain: goerli, transport: http() })
+const openexTestnetClient = createPublicClient({ chain: openextest, transport: http() })
 
 const getDefaultClient = (chainId: ChainId): PublicClient => {
   switch (chainId) {
@@ -26,6 +49,8 @@ const getDefaultClient = (chainId: ChainId): PublicClient => {
       return bscTestnetClient
     case ChainId.GOERLI:
       return goerliClient
+    case ChainId.OPEN_EX_LONG_TEST:
+      return openexTestnetClient
     default:
       return bscClient
   }

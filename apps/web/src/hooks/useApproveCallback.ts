@@ -116,7 +116,7 @@ export function useApproveCallback(
 
       const estimatedGas = await tokenContract.estimateGas
         .approve(
-          [spender as Address, MaxUint256], // TODO: Fix viem
+          [spender as Address, overrideAmountApprove ?? amountToApprove?.quotient ?? targetAmount ?? MaxUint256], // TODO: Fix viem
           // @ts-ignore
           {
             account: tokenContract.account,

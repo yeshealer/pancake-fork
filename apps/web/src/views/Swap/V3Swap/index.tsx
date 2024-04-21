@@ -9,14 +9,7 @@ import { shouldShowMMLiquidityError } from 'views/Swap/MMLinkPools/utils/exchang
 import { EXPERIMENTAL_FEATURES } from 'config/experimentalFeatures'
 import { useExperimentalFeatureEnabled } from 'hooks/useExperimentalFeatureEnabled'
 import { useDerivedBestTradeWithMM } from '../MMLinkPools/hooks/useDerivedSwapInfoWithMM'
-import {
-  FormHeader,
-  FormMain,
-  MMTradeDetail,
-  PricingAndSlippage,
-  SwapCommitButtonV2,
-  TradeDetails,
-} from './containers'
+import { FormHeader, FormMain, MMTradeDetail, PricingAndSlippage, SwapCommitButtonV2, TradeDetails } from './containers'
 import { MMCommitButton } from './containers/MMCommitButton'
 import { MMCommitButtonV2 } from './containers/MMCommitButtonV2'
 import { SwapCommitButton } from './containers/SwapCommitButton'

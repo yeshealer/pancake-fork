@@ -11,6 +11,7 @@ import { farmsV3 as goerliFarms } from '../goerli'
 import { farmsV3 as lineaFarms } from '../linea'
 import { farmsV3 as opBNBFarms } from '../opBNB'
 import { farmsV3 as opBnbTestnetFarms } from '../opBnbTestnet'
+import { farmsV3 as openEXLongFarms } from '../openEXLong'
 import { farmsV3 as polygonZkEVMFarms } from '../polygonZkEVM'
 import { farmsV3 as polygonZkEVMTestnetFarms } from '../polygonZkEVMTestnet'
 import { farmsV3 as zkSyncFarms } from '../zkSync'
@@ -30,6 +31,7 @@ export const farmsV3ConfigChainMap: Record<FarmV3SupportedChainId, ComputedFarmC
   [ChainId.BASE]: baseFarms,
   [ChainId.OPBNB_TESTNET]: opBnbTestnetFarms,
   [ChainId.OPBNB]: opBNBFarms,
+  [ChainId.OPEN_EX_LONG_TEST]: openEXLongFarms,
 }
 
 export type Addresses = {

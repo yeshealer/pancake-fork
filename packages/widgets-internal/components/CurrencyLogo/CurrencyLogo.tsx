@@ -1,10 +1,10 @@
-import { Currency } from "@pancakeswap/sdk";
 import { ChainId } from "@pancakeswap/chains";
+import { useHttpLocations } from "@pancakeswap/hooks";
+import { Currency } from "@pancakeswap/sdk";
+import { BinanceIcon, TokenLogo } from "@pancakeswap/uikit";
 import { useMemo } from "react";
 import { styled } from "styled-components";
-import { space, SpaceProps } from "styled-system";
-import { useHttpLocations } from "@pancakeswap/hooks";
-import { TokenLogo, BinanceIcon } from "@pancakeswap/uikit";
+import { SpaceProps, space } from "styled-system";
 
 import { getCurrencyLogoUrls } from "./utils";
 
@@ -53,7 +53,11 @@ export function CurrencyLogo({
     return (
       <StyledLogo
         size={size}
-        srcs={[`https://assets.pancakeswap.finance/web/native/${currency.chainId}.png`]}
+        srcs={
+          currency.chainId === ChainId.OPEN_EX_LONG_TEST
+            ? [`/images/chains/${currency.chainId}.png`]
+            : [`https://assets.pancakeswap.finance/web/native/${currency.chainId}.png`]
+        }
         width={size}
         style={style}
         {...props}

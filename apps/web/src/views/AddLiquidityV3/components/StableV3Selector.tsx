@@ -85,6 +85,10 @@ export function StableV3Selector({
     }
   }, [feeAmount, isPending, isError, largestUsageFeeTier, handleFeePoolSelect, selectorType])
 
+  useEffect(() => {
+    console.log(selectorType)
+  }, [selectorType])
+
   return (
     <HideShowSelectorSection
       showOptions={showOptions}
